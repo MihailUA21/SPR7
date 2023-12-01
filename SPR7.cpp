@@ -49,6 +49,16 @@ public:
 
 int main()
 {
-    
+    setlocale(LC_ALL, "Ukrainian_Ukraine.1251");
+
+    Cashier cashier;
+    Manager manager;
+    Director director;
+
+    cashier.setSuccessor(&manager);
+    manager.setSuccessor(&director);
+    cashier.processLoan(100000);
+
+    return 0;
 }
 
